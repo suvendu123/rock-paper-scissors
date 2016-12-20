@@ -10,32 +10,32 @@ public class RockPaperScissorSeviceImpl implements RockPaperScissorSevice{
         }
         switch (first) {
         case PAPER:
-            return returnPaperWinCase(second);
+            return paperWinCase(second);
         case ROCK:
-            return returnRockWinCase(second);
+            return rockWinCase(second);
         case SCISSOR:
-            return returnScissorWinCase(second);
+            return scissorWinCase(second);
 
         default:
             throw new IllegalArgumentException("Invalid argument.");
         }
     }
 
-    private Player returnScissorWinCase(Player second) {
+    private Player scissorWinCase(Player second) {
         if (second.equals(Player.PAPER)) {
             return Player.SCISSOR;
         }
         return second;
     }
 
-    private Player returnRockWinCase(Player second) {
+    private Player rockWinCase(Player second) {
         if (second.equals(Player.SCISSOR)) {
             return Player.ROCK;
         }
         return second;
     }
 
-    private Player returnPaperWinCase(Player second) {
+    private Player paperWinCase(Player second) {
         if (second.equals(Player.ROCK)) {
             return Player.PAPER;
         }
